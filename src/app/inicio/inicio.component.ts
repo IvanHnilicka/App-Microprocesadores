@@ -10,19 +10,19 @@ export class InicioComponent implements OnInit{
   ngOnInit(): void {
     let porcentaje = 80;
     let lecturaSensor = 500;
-    let altura = 50;
+    let altura = 80;
 
     let porcentajeLbl = document.getElementById('porcentaje');
     let litrosLbl = document.getElementById("litros");
+    this.updateHeight(altura);
     this.updateCounter(porcentajeLbl, porcentaje);
     this.updateCounter(litrosLbl, lecturaSensor);
-    this.updateHeight(altura);
   }
 
 
   updateCounter(label: any, objetivo: number){
     let contador = 0;
-    let intervalo = (1/objetivo) * 2650;
+    let intervalo = (1/objetivo) * 1000;
     let texto = label.textContent;
 
     const interval = setInterval(function() {
