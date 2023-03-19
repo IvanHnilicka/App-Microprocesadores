@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class InicioComponent implements OnInit{
 
   ngOnInit(): void {
-    let porcentaje = 80;
+    let porcentaje = 100;
     let lecturaSensor = 500;
-    let altura = 80;
 
     let porcentajeLbl = document.getElementById('porcentaje');
     let litrosLbl = document.getElementById("litros");
-    this.updateHeight(altura);
+    this.updateHeight(porcentaje);
     this.updateCounter(porcentajeLbl, porcentaje);
     this.updateCounter(litrosLbl, lecturaSensor);
   }
