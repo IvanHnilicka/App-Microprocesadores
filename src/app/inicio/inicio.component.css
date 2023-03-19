@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    place-items: center;
+}
+
+.tinaco {
+    height: 60%;
+    width: 60%;
+    margin-top: 100px;
+    border: 1px solid black;
+    display: flex;
+    align-items: end;
+    background-color: white;
+}
+
+.agua {
+    height: 0;
+    width: 100%;
+    margin: 0;
+    border: 1px solid rgb(188, 237, 253);
+    background-color: rgb(188, 237, 253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: llenadoAgua 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes llenadoAgua {
+    from {
+        height: 0;
+    }
+    to{
+        height: 50%;
+    }
+}
+
+.etiqueta {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+p {    
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.25rem;
+}
+
+p.porcentaje {
+    animation-name: porcentajeVisible;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes porcentajeVisible {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
