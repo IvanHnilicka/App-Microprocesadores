@@ -4,20 +4,51 @@
 }
 
 .main-container {
-    height: 100%;
+    height: 95%;
     width: 100%;
     margin: 0;
     display: grid;
-    grid-template-rows: 75% 25%;
+    grid-template-rows: 75% 15%;
     place-items: center;
 }
 
+.container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    top: 20px;
+    right: 10px;
+}
+
+.btn-config {
+    height: 10%;
+    width: 10%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.btn-config:active img {
+    animation: shrink-btn;
+    animation-duration: 0.5s;
+}
+
+@keyframes shrink-btn {
+    from {         
+        transform: scale(90%);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
 .tinaco {
-    height: 60%;
+    height: 64%;
     width: 60%;
     margin-top: 100px;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 9px;
     display: flex;
     align-items: end;
     background-color: white;
@@ -29,19 +60,20 @@
     width: 100%;
     margin: 0;
     border: 1px solid rgb(188, 237, 253);
-    background-color: rgb(188, 237, 253);
+    background-color: rgb(182, 242, 255);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 9px;
     max-height: 99.45%;
 }
 
 .etiqueta {
-    height: 100%;
+    height: 50%;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-self: start;
 }
 
 p {    
@@ -49,7 +81,7 @@ p {
     font-size: 18px;
 }
 
-p.porcentaje {
+.porcentaje {
     animation-name: porcentajeVisible;
     animation-duration: 1s;
     animation-fill-mode: forwards;

@@ -6,8 +6,9 @@
 html, body {
     height: 100%;
     width: 100%;
+    overflow-y: hidden;
 }
 
 body {
-    background-color: rgb(232, 248, 255);
+    background-image: linear-gradient(white, rgb(226, 249, 255), rgb(216, 252, 255))
 }

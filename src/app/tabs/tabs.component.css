@@ -1,0 +1,42 @@
+.tabs-container {
+    height: 35px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+}
+
+.boton-tab {
+    height: 35px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgb(236, 236, 236);
+}
+
+.boton-tab:active img{
+    animation-name: shrink-btn;
+    animation-duration: 0.5s;
+}
+
+@keyframes shrink-btn {
+    from {         
+        transform: scale(90%);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+.boton-tab img {
+    height: 80%;
+    width: 80%;
+}
+
+.icon-btn {
+    height: 100%;
+    width: 100%;
+}
