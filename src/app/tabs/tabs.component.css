@@ -1,17 +1,17 @@
 .tabs-container {
-    height: 35px;
+    height: 40px;
     width: 100%;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: 33.33vw 33.33vw 33.33vw;
     position: fixed;
     bottom: 0;
     background-color: white;
 }
 
 .boton-tab {
-    height: 35px;
+    height: 45px;
     width: 100%;
     background-color: white;
     border: 1px solid rgb(236, 236, 236);
@@ -32,8 +32,8 @@
 }
 
 .boton-tab img {
-    height: 80%;
-    width: 80%;
+    height: 60%;
+    width: 60%;
 }
 
 .icon-btn {

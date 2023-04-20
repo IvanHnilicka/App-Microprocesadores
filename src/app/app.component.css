@@ -5,17 +5,5 @@
 
 body{ 
     display: grid;
-    grid-template-rows: 95% 5%;
-}
-
-app-inicio {
-    position: relative;
-    top: 0;
-}
-
-app-tabs {
-    height: 5%;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+    grid-template-rows: 95vh 5vh;
 }

@@ -10,5 +10,8 @@ html, body {
 }
 
 body {
-    background-image: linear-gradient(white, rgb(226, 249, 255), rgb(216, 252, 255))
+    /*
+    background-image: linear-gradient(white, rgb(235, 253, 255), rgb(205, 251, 255), rgb(235, 253, 255), white)
+    */
+    background-color: white;
 }

@@ -47,6 +47,10 @@ export class InicioComponent implements OnInit{
       return;
     }
 
+    if(altura < 100){
+
+    }
+
     const interval = setInterval(function() {
       contador++;
       agua!.style.height = contador + '%';
