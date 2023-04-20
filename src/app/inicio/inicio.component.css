@@ -18,7 +18,7 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
-    top: 20px;
+    top: 10px;
     right: 10px;
 }
 
@@ -54,7 +54,7 @@
 
 .tinaco {
     height: 50vh;
-    width: 80vw;
+    width: 65vw;
     min-height: 180px;
     max-width: 360px;
     max-height: 512px;
@@ -175,5 +175,21 @@ p {
     }
     to {
         opacity: 100%;
+    }
+}
+
+@media screen and (orientation: landscape){
+    .btn-config{
+        height: 4vw;
+        width: 4vw;
+    }
+    
+    .tinaco{
+        height: 65vh;
+        width: 50vh;
+    }
+
+    p {
+        font-size: 1rem;
     }
 }
