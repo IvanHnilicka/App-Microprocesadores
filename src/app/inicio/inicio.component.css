@@ -107,7 +107,6 @@ button:active img {
     width: 50%;
     background-color: rgb(219, 247, 255);
     position: absolute;
-
     border-radius: 50%;
     top: 0;
     animation: show-olas 10s linear, waves 0.9s infinite alternate;
@@ -203,7 +202,7 @@ p{
     width: 90vw;
     min-height: 250px;
     max-width: 550px;
-    background-image: linear-gradient(rgb(245, 255, 255), rgb(215, 255, 255), rgb(245, 255, 255));
+    background-image: linear-gradient(rgb(235, 255, 255), rgb(225, 255, 255), rgb(235, 255, 255));
     border-radius: 30px;
     display: grid;
     grid-template-rows: 80% 20%;
@@ -242,6 +241,7 @@ p{
     font-family: 'Heebo', sans-serif;
     height: fit-content;
     align-self: end;
+    color: rgb(90, 90, 90);
 }
 
 .inputs-container input {
@@ -250,7 +250,8 @@ p{
     margin-top: 5px;
     border: 1px solid rgb(212, 207, 207);
     outline: none;
-    padding-left: 2px;
+    padding-left: 2px;    
+    color: rgb(90, 90, 90);
 }
 
 .modal-content button {

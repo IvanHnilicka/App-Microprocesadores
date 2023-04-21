@@ -8,6 +8,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { FormsModule } from '@angular/forms';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { SugerenciasComponent } from './sugerencias/sugerencias.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { SugerenciasComponent } from './sugerencias/sugerencias.component';
     SugerenciasComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    FormsModule
+    BrowserModule,
+    FormsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,6 @@
+.grafica {
+    height: calc(100% - 100px);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
