@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit{
 
+  configuracion = false;
+  personas = 3;
+  litros = 500;
+
+
   ngOnInit(): void {
-    let porcentaje = 75;
+    let porcentaje = 80;
     let lecturaSensor = 500;
 
     let porcentajeLbl = document.getElementById('porcentaje');
@@ -18,6 +23,8 @@ export class InicioComponent implements OnInit{
     // this.updateCounter(litrosLbl, lecturaSensor);
   }
 
+
+  // Realiza la animacion para contador de porcentaje
   updateCounter(label: any, objetivo: number){
     let contador = 0;
     let intervalo = (1/objetivo) * 900;
@@ -38,6 +45,7 @@ export class InicioComponent implements OnInit{
   }
 
   
+  // Realiza la animacion para actualizar la altura del agua
   updateHeight(altura: number){
     let contador = 0;
     let agua = document.getElementById("agua");
@@ -47,10 +55,6 @@ export class InicioComponent implements OnInit{
       return;
     }
 
-    if(altura < 100){
-
-    }
-
     const interval = setInterval(function() {
       contador++;
       agua!.style.height = contador + '%';
@@ -58,5 +62,16 @@ export class InicioComponent implements OnInit{
         clearInterval(interval);
       }
     }, (1/altura) * 900);
+  }
+
+
+  guardarConfiguracion(){
+    console.log("Configuracion guardada");
+  }
+
+
+  // Evita que se oculte el modal si se da clic en algun input
+  stopPropagation(event: Event){
+    event.stopPropagation();
   }
 }
