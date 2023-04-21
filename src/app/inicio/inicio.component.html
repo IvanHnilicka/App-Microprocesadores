@@ -14,7 +14,8 @@
 
 
         <div class="mensaje-container" *ngIf="modal_guardado" (click)="stopPropagation($event)">    
-            <p>Los datos han sido actualizados</p>
+            <p class="mensaje-confirmacion">Los datos han sido actualizados</p>
+            <img src="../../assets/checkmark-circle-outline.svg" alt="Exito">
             <button (click)="modal=false; modal_guardado=false">Regresar</button>
         </div>
     </div>
@@ -37,9 +38,8 @@
                 <p class="porcentaje" id="porcentaje">%</p>
             </div>
         </div>
-
-        <div class="etiqueta">
-            <p id="etiqueta">Litros de agua disponibles: 800</p>
-        </div>
+        
+        
+        <p id="etiqueta">Litros de agua disponibles: 800</p>
     </div>
 </body>

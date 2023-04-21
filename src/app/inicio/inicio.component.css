@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .main-container {
     height: 95%;
     width: 100%;
@@ -42,7 +37,7 @@
 
 button:active img {
     animation: shrink-btn;
-    animation-duration: 0.3s;
+    animation-duration: 0.2s;
 }
 
 @keyframes shrink-btn {
@@ -72,21 +67,6 @@ button:active img {
     overflow: hidden;
 }
 
-.tinaco-top {
-    height: 21%;
-    width: 32%;
-    position: absolute;
-    transform: rotate(45deg);
-    border: 1px solid red;
-}
-
-.tinaco-top-left {
-    top: -1px;
-    left: -20px;
-    border: 1px solid red;
-    transform: rotate(45deg);
-}
-
 .agua {
     height: 0;
     width: 100%;
@@ -109,7 +89,7 @@ button:active img {
     position: absolute;
     border-radius: 50%;
     top: 0;
-    animation: show-olas 10s linear, waves 0.9s infinite alternate;
+    animation: waves 0.9s infinite alternate;
 }
 
 .ola-izquierda {
@@ -144,29 +124,21 @@ button:active img {
     }
 }
 
-@keyframes show-olas {
-    from {
-        visibility: hidden;
-    }
-    to {
-        visibility: visible;
-    }
-}
-
-.etiqueta {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
 p{    
     font-size: 1.3rem;
     color: rgb(90, 90, 90);
     height: auto;
     width: auto;
     text-align: justify;
+}
+
+#etiqueta {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
 }
 
 .porcentaje {
@@ -291,25 +263,46 @@ p{
 }
 
 .mensaje-container {
-    height: 12vh;
+    height: auto;
     width: 70vw;
     max-width: 550px;
     min-height: 96px;
-    padding: 10px;
     background-image: linear-gradient(rgb(235, 255, 255), rgb(225, 255, 255), rgb(235, 255, 255));
     border-radius: 20px;
     position: relative;
     display: grid;
     place-items: center;
-    grid-template-rows: 70% 30%;
+    grid-template-rows: 40% 40% 20%;
     grid-template-columns: 100%;
-    animation-name: show-modal;
-    animation-duration: 0.3s;
+    animation-name: confirmacion;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes confirmacion {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 0;
+    }
 }
 
 .mensaje-container p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
+}
+
+.mensaje-confirmacion {
+    align-self: end;
+}
+
+.mensaje-container img {
+    height: 55%;
+    width: 55%;
+    grid-row: 2 / 3;
+    position: relative;
+    align-self: center;
 }
 
 .mensaje-container button {
@@ -321,11 +314,12 @@ p{
     box-shadow: 0px 1px 3px;
     border: none;
     border-radius: 10px;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    align-self: start;
 }
 
 .mensaje-container button:active{
@@ -359,7 +353,9 @@ p{
     }
 
     .mensaje-container {
-        height: 12vh;
+        height: 35vh;
         width: 45vw;
+        padding: 10px;
+        border-radius: 15px;
     }
 }
