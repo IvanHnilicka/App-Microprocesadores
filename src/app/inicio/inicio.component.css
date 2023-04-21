@@ -166,6 +166,7 @@ p{
     color: rgb(90, 90, 90);
     height: auto;
     width: auto;
+    text-align: justify;
 }
 
 .porcentaje {
@@ -210,11 +211,11 @@ p{
     place-content: center;
     position: relative;
     z-index: 11;
-    animation-name: show-config;
+    animation-name: show-modal;
     animation-duration: 0.3s;
 }
 
-@keyframes show-config {
+@keyframes show-modal {
     from {
         transform: scale(0, 0)
     }
@@ -238,10 +239,12 @@ p{
 }
 
 .inputs-container label {
-    font-family: 'Heebo', sans-serif;
     height: fit-content;
-    align-self: end;
+    padding-right: 10px;
+    font-family: 'Heebo', sans-serif;
+    text-align: justify;
     color: rgb(90, 90, 90);
+    align-self: end;
 }
 
 .inputs-container input {
@@ -263,7 +266,6 @@ p{
     box-shadow: 0px 1px 3px;
     border: none;
     border-radius: 50%;
-    position: relative;
     top: 10%;
     display: flex;
     justify-content: center;
@@ -288,7 +290,48 @@ p{
     right: 20px;
 }
 
+.mensaje-container {
+    height: 12vh;
+    width: 70vw;
+    max-width: 550px;
+    min-height: 96px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(235, 255, 255), rgb(225, 255, 255), rgb(235, 255, 255));
+    border-radius: 20px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 70% 30%;
+    grid-template-columns: 100%;
+    animation-name: show-modal;
+    animation-duration: 0.3s;
+}
 
+.mensaje-container p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.mensaje-container button {
+    height: 3.6vh;
+    width: 9vh;
+    max-height: 40px;
+    padding: 12px 40px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 1px 3px;
+    border: none;
+    border-radius: 10px;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.mensaje-container button:active{
+    animation: shrink-btn;
+    animation-duration: 0.3s;
+}
 
 @media screen and (orientation: landscape){
     .btn-config{
@@ -313,5 +356,10 @@ p{
     .inputs-container input {
         height: fit-content;
         width: 100%;
+    }
+
+    .mensaje-container {
+        height: 12vh;
+        width: 45vw;
     }
 }

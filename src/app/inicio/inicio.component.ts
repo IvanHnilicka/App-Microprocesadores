@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit{
 
-  configuracion = false;
+  modal = false;
+  modal_configuracion = false;
+  modal_guardado = false;
+
   personas = 3;
   litros = 500;
-
 
   ngOnInit(): void {
     let porcentaje = 80;
@@ -66,6 +68,8 @@ export class InicioComponent implements OnInit{
 
 
   guardarConfiguracion(){
+    this.modal_configuracion = false;
+    this.modal_guardado = true;
     console.log("Configuracion guardada");
   }
 
