@@ -11,18 +11,16 @@ export class InicioComponent implements OnInit{
   modal_configuracion = false;
   modal_guardado = false;
 
-  personas = 3;
-  litros = 500;
+  // Se obtendrán del almacenamiento local una vez implementado
+  numPersonas = 3;  
+  limiteLitros = 500;
+
 
   ngOnInit(): void {
-    let porcentaje = 80;
-    let lecturaSensor = 500;
-
+    let porcentaje = 80;  // Se calculará en base a la lectura del sensor y el tamaño del tinaco
     let porcentajeLbl = document.getElementById('porcentaje');
-    let litrosLbl = document.getElementById("litros");
     this.updateHeight(porcentaje);
     this.updateCounter(porcentajeLbl, porcentaje);
-    // this.updateCounter(litrosLbl, lecturaSensor);
   }
 
 
@@ -47,7 +45,7 @@ export class InicioComponent implements OnInit{
   }
 
   
-  // Realiza la animacion para actualizar la altura del agua
+  // Realiza la animacion para actualizar la altura del agua en el tinaco
   updateHeight(altura: number){
     let contador = 0;
     let agua = document.getElementById("agua");
@@ -67,9 +65,11 @@ export class InicioComponent implements OnInit{
   }
 
 
+  // Pendiente implementar almacenamiento local
   guardarConfiguracion(){
     this.modal_configuracion = false;
-    this.modal_guardado = true;
+    this.modal_guardado = true;    
+
     console.log("Configuracion guardada");
   }
 

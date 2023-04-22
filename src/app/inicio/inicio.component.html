@@ -3,9 +3,9 @@
         <div class="modal-content" *ngIf="modal_configuracion">
             <div class="inputs-container" (click)="stopPropagation($event)">
                 <label for="numPersonas">Numero de personas que habitan en su hogar:</label>
-                <input type="number" id="numPersonas" name="numPersonas" min="1" max="10" placeholder="{{personas}}" [(ngModel)]="personas">
+                <input type="number" id="numPersonas" name="numPersonas" min="1" max="10" placeholder="{{numPersonas}}" [(ngModel)]="numPersonas">
                 <label for="limite">Limite de litros que desea gastar:</label>
-                <input type="number" id="limite" name="limite" min="1" max="1000" placeholder="{{litros}}" [(ngModel)]="litros">
+                <input type="number" id="limite" name="limite" min="1" max="1000" placeholder="{{limiteLitros}}" [(ngModel)]="limiteLitros">
             </div>
 
             <button class="guardar-btn" (click)="guardarConfiguracion(); stopPropagation($event)"><img src="../../assets/save-outline.svg" alt="Guardar"></button>

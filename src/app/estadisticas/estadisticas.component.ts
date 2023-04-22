@@ -15,11 +15,11 @@ export class EstadisticasComponent {
   public barChartData: ChartConfiguration<'bar'>['data'] = {
     labels: [ 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo' ],  // Eti1uetas para eje x
     datasets: [
-      { data: [ 500, 260, 200, 300, 285, 297, 301 ],  // Datos que se graficarán
-        label: 'Consumo en litros de agua', // Leyenda que se muestra en la etiqueta si se está mostrandos
+      { data: [ 500, 265, 229, 361, 285, 297, 301 ],  // Datos que se graficarán
+        label: 'Consumo de agua en litros', // Texto que se muestra en las etiquetas
         backgroundColor: "rgb(133, 237, 255)",  // Color de fondo de las barras
-        borderColor: "rgb(133, 237, 255)"
-      }  // Color del borde de las barras
+        borderColor: "rgb(133, 237, 255)" // Color del borde de las barras
+      }
     ]
   };
 
