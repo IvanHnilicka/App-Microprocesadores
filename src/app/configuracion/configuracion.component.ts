@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ConfiguracionComponent {
   modal = false;
-  modal_configuracion = false;
   modal_guardado = false;
 
   // Se obtendrán del almacenamiento local una vez implementado
@@ -16,15 +15,7 @@ export class ConfiguracionComponent {
   
   // Pendiente implementar almacenamiento local
   guardarConfiguracion(){
-    this.modal_configuracion = false;
-    this.modal_guardado = true;    
-
+    this.modal_guardado = true;
     console.log("Configuracion guardada");
-  }
-
-
-  // Evita que se oculte el modal si se da clic en algun input
-  stopPropagation(event: Event){
-    event.stopPropagation();
   }
 }
