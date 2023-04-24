@@ -10,16 +10,14 @@
         <input type="number" id="limite" name="limite" min="1" max="1000" placeholder="{{limiteLitros}}" [(ngModel)]="limiteLitros">
     </div>
 
-    <button class="guardar-btn" (click)="guardarConfiguracion();">Guardar</button>
-        
-
+    <button class="guardar-btn" (click)="guardarConfiguracion();" (click)="modal=true">Guardar</button>      
 
 
     <div class="modal" *ngIf="modal" (click)="modal = false;">
         <div class="mensaje-container" *ngIf="modal_guardado">    
             <p class="mensaje-confirmacion">Los datos han sido actualizados</p>
             <img src="../../assets/checkmark-circle-outline.svg" alt="Exito">
-            <button (click)="modal=false; modal_guardado=false">Regresar</button>
+            <button routerLink="Inicio">Regresar</button>
         </div>
     </div>
 </div>

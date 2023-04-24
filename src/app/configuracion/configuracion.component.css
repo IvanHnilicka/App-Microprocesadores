@@ -127,15 +127,6 @@ button img {
     z-index: 11;
 }
 
-@keyframes show-modal {
-    from {
-        transform: scale(0, 0)
-    }
-    to {
-        transform: scale(1, 1);
-    }
-}
-
 .modal-content button {
     height: 3.9vh;
     width: 3.9vh;
