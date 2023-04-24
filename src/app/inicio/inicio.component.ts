@@ -5,17 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit{
-
-  modal = false;
-  modal_configuracion = false;
-  modal_guardado = false;
-
-  // Se obtendrán del almacenamiento local una vez implementado
-  numPersonas = 3;  
-  limiteLitros = 500;
-
-
+export class InicioComponent implements OnInit{ 
   ngOnInit(): void {
     let porcentaje = 80;  // Se calculará en base a la lectura del sensor y el tamaño del tinaco
     let porcentajeLbl = document.getElementById('porcentaje');
@@ -27,7 +17,7 @@ export class InicioComponent implements OnInit{
   // Realiza la animacion para contador de porcentaje
   updateCounter(label: any, objetivo: number){
     let contador = 0;
-    let intervalo = (1/objetivo) * 900;
+    let intervalo = (1 / objetivo) * 900;
     let texto = label.textContent;
 
     const interval = setInterval(function() {
@@ -65,17 +55,5 @@ export class InicioComponent implements OnInit{
   }
 
 
-  // Pendiente implementar almacenamiento local
-  guardarConfiguracion(){
-    this.modal_configuracion = false;
-    this.modal_guardado = true;    
-
-    console.log("Configuracion guardada");
-  }
-
-
-  // Evita que se oculte el modal si se da clic en algun input
-  stopPropagation(event: Event){
-    event.stopPropagation();
-  }
+  
 }

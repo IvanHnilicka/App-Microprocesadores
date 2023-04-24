@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { SugerenciasComponent } from './sugerencias/sugerencias.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgChartsModule } from 'ng2-charts';
     InicioComponent,
     TabsComponent,
     EstadisticasComponent,
-    SugerenciasComponent
+    SugerenciasComponent,
+    ConfiguracionComponent
   ],
   imports: [
     AppRoutingModule,

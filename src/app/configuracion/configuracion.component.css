@@ -1,0 +1,242 @@
+.configuracion-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 7vh 73vh calc(20vh - 40px);
+    grid-template-columns: 70vw 30vw;
+}
+
+.container-btn {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+button {
+    background-color: white;
+    border: none;
+}
+
+button img {
+    height: 80%;
+    width: 80%;
+}
+
+.regresar-btn {
+    height: 5vh;
+    width: 5vh;
+    max-height: 40px;        
+    max-width: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs-container {
+    height: 80%;
+    width: 95%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    padding: 12px;
+    padding-right: 0;
+    font-size: 1rem;
+    align-self: start;
+    animation-name: inputs-load;
+    animation-duration: 0.7s;
+}
+
+@keyframes inputs-load {
+    from {
+        transform: translateY(20%);
+        opacity: 0%;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+
+.inputs-container label {
+    height: fit-content;
+    padding-right: 10px;
+    font-family: 'Heebo', sans-serif;
+    text-align: justify;
+    color: rgb(90, 90, 90);
+    align-self: end;
+}
+
+.inputs-container input {
+    height: fit-content;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid rgb(212, 207, 207);
+    outline: none;
+    padding-left: 2px;    
+    color: rgb(90, 90, 90);
+    margin-bottom: 40px;
+}
+
+.guardar-btn {
+    height: 4.5vh;
+    width: 25%;
+    max-height: 38px;
+    max-width: 100px;
+    border: 1px solid rgb(236, 236, 236);
+    border-radius: 25px;
+    box-shadow: 1px 1px 2px 1px;
+    position: relative;
+    bottom: 1.5vh;
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    align-self: end;
+    justify-self: center;
+    font-size: 1rem;
+    color: rgb(90, 90, 90);
+}
+
+.guardar-btn:active{    
+    animation-name: shrink-btn;
+    animation-duration: 0.5s;
+}
+
+@keyframes shrink-btn {
+    from {
+        font-size: 0.85rem;
+    }
+    to {
+        font-size: 1rem;
+    }
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 11;
+}
+
+@keyframes show-modal {
+    from {
+        transform: scale(0, 0)
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.modal-content button {
+    height: 3.9vh;
+    width: 3.9vh;
+    max-height: 40px;
+    max-width: 40px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 1px 3px;
+    border: none;
+    border-radius: 50%;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / 3;
+    position: absolute;
+}
+
+.modal-content button img {
+    height: 70%;
+    width: 70%;
+}
+
+.mensaje-container {
+    height: auto;
+    width: 70vw;
+    max-width: 550px;
+    min-height: 96px;
+    background-image: linear-gradient(rgb(235, 255, 255), rgb(225, 255, 255), rgb(235, 255, 255));
+    border-radius: 20px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 40% 40% 20%;
+    grid-template-columns: 100%;
+    animation-name: confirmacion;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes confirmacion {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.mensaje-container p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.mensaje-confirmacion {
+    align-self: end;
+}
+
+.mensaje-container img {
+    height: 55%;
+    width: 55%;
+    grid-row: 2 / 3;
+    position: relative;
+    align-self: center;
+}
+
+.mensaje-container button {
+    height: 3.6vh;
+    width: 9vh;
+    max-height: 40px;
+    padding: 12px 40px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 1px 3px;
+    border: none;
+    border-radius: 10px;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    align-self: start;
+}
+
+.mensaje-container button:active{
+    animation: shrink-btn;
+    animation-duration: 0.3s;
+}
+
+@media screen and (orientation: landscape){
+    .regresar-btn{
+        height: 5vw;
+        width: 5vw;
+        position: relative;
+        right: 3%;
+    }
+
+    .inputs-container {
+        padding-top: 4%;
+    }
+
+    .guardar-btn {
+        height: 5vw;
+        bottom: 1.5vw;
+    }
+}
