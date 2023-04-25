@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-estadisticas',
@@ -7,13 +8,17 @@ import { ChartConfiguration } from 'chart.js';
   styleUrls: ['./estadisticas.component.css']
 })
 export class EstadisticasComponent {
+
+  constructor(private ls: LocalStorageService){}
+
+
   title = 'Consumo diario';
 
   public barChartLegend = false;  // Indica que no muestre la etiqueta
   public barChartPlugins = [];
 
   public barChartData: ChartConfiguration<'bar'>['data'] = {
-    labels: [ 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo' ],  // Eti1uetas para eje x
+    labels: [ 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo' ],  // Etiquetas para eje x
     datasets: [
       { data: [ 500, 265, 229, 361, 285, 297, 301 ],  // Datos que se graficarán
         label: 'Consumo de agua en litros', // Texto que se muestra en las etiquetas
@@ -26,4 +31,5 @@ export class EstadisticasComponent {
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true
   };
+
 }
