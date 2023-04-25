@@ -1,6 +1,7 @@
 <div class="configuracion-container">
     <div class="container-btn">
-        <button class="regresar-btn" routerLink="Inicio"><img src="../../assets/return-down-back-outline.svg" alt="Regresar"></button>
+        <h2 class="header">Configuración</h2>
+        <button class="regresar-btn" id="regresar-btn" routerLink="Inicio"><img src="../../assets/return-down-back-outline.svg" alt="Regresar"></button>
     </div>
 
     <div class="inputs-container">
@@ -17,7 +18,7 @@
         <div class="mensaje-container" *ngIf="modal_guardado">    
             <p class="mensaje-confirmacion">Los datos han sido actualizados</p>
             <img src="../../assets/checkmark-circle-outline.svg" alt="Exito">
-            <button routerLink="Inicio">Regresar</button>
+            <button class="guardar-btn" routerLink="Inicio">Regresar</button>
         </div>
     </div>
 </div>

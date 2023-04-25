@@ -15,7 +15,6 @@ export class AppComponent {
     if(this.ls.leerDatos("numPersonas") && this.ls.leerDatos("limiteLitros")){
       return true;
     }
-
     return false;
   }
 }

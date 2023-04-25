@@ -7,8 +7,8 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['./configuracion.component.css']
 })
 export class ConfiguracionComponent {
-  modal = false;
-  modal_guardado = false;
+  modal = true;
+  modal_guardado = true;
   numPersonas: any;
   limiteLitros: any;
 
@@ -23,9 +23,11 @@ export class ConfiguracionComponent {
 
   validarInputs(){    
     let botonGuardar = document.getElementById("guardar-btn") as HTMLButtonElement;
+    let botonRegresar = document.getElementById("regresar-btn") as HTMLButtonElement;
 
     if(!this.numPersonas || !this.limiteLitros){
       botonGuardar.disabled = true;
+      botonRegresar.style.display = 'none';
       botonGuardar.style.animationDuration = "0s";
       botonGuardar.style.opacity = "50%";
     }else{
@@ -40,6 +42,5 @@ export class ConfiguracionComponent {
     this.modal_guardado = true;
     this.ls.guardarDatos("numPersonas", this.numPersonas);
     this.ls.guardarDatos("limiteLitros", this.limiteLitros);
-    console.log("Configuracion guardada");
   }
 }

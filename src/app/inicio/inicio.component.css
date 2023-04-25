@@ -1,33 +1,47 @@
-.main-container {
-    height: 95%;
-    width: 100%;
-    margin: 0;
+body {
+    height: calc(100vh - 40px);
+    width: 100vw;
     display: grid;
-    grid-template-rows: 68vh 7vh;
+    grid-template-rows: 7vh calc(93vh - 40px);
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 70% 7.5%;
     place-items: center;
 }
 
 .container-btn {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+    background-color: rgb(122, 205, 216);
+}
+
+.header {
+    color: white;
+    justify-self: start;
     position: relative;
-    top: 10px;
-    right: 10px;
+    left: 10px;
+    font-family: 'Heebo', sans-serif;
 }
 
 .btn-config {
     height: 5vh;
     width: 5vh;
-    max-height: 50px;
-    max-width: 50px;
+    max-height: 36px;        
+    max-width: 36px;
     background-color: white;
     border: none;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: center;
 }
 
 .btn-config img {
@@ -50,21 +64,18 @@ button:active img {
 }
 
 .tinaco {
-    height: 50vh;
-    width: 65vw;
-    min-height: 180px;
-    max-width: 360px;
-    max-height: 512px;
+    height: 65%;
+    width: 60%;
     border: 1px solid rgb(120, 120, 120);
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
     display: flex;
     align-items: flex-end;
+    align-self: center;
     background-color: white;
-    position: relative;
-    align-self: flex-end;
-    margin-bottom: 5vh;
     overflow: hidden;
+    position: relative;
+    top: 7%;
 }
 
 .agua {
@@ -124,7 +135,7 @@ button:active img {
     }
 }
 
-p{    
+p {    
     font-size: 1.3rem;
     color: rgb(90, 90, 90);
     height: auto;
@@ -133,8 +144,6 @@ p{
 }
 
 #etiqueta {
-    height: fit-content;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -158,18 +167,41 @@ p{
     }
 }
 
-@media screen and (orientation: landscape){
-    .btn-config{
-        height: 4vw;
-        width: 4vw;
+@media screen and (orientation: landscape){    
+    body {
+        grid-template-rows: 12vh calc(88vw - 40px);
     }
-    
-    .tinaco{
-        height: 65vh;
-        width: 50vh;
+
+    .main-container {
+        grid-template-rows: calc(70vh - 45px) calc(28vh - 45px);
+    }
+
+    .container-btn {
+        grid-template-columns: 90% 10%;
+    }
+
+    .btn-config{
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    .tinaco {
+        height: 85%;
+        width: 20%;
+        top: 0;
+    }
+
+    #etiqueta {
+        align-self: center;
+        position: relative;
+        top: -10%;
     }
 
     p {
         font-size: 1rem;
+    }
+
+    .porcentaje {
+        font-size: 1.35rem;
     }
 }
