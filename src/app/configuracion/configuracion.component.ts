@@ -26,6 +26,7 @@ export class ConfiguracionComponent {
     }
   }
 
+  
   validarInputs(){    
     let botonGuardar = document.getElementById("guardar-btn") as HTMLButtonElement;
 
@@ -39,8 +40,8 @@ export class ConfiguracionComponent {
       botonGuardar.style.opacity = "100%";
     }
   }  
-  
-  // Pendiente implementar almacenamiento local
+
+
   guardarConfiguracion(){
     this.modal_guardado = true;
     this.ls.guardarDatos("numPersonas", this.numPersonas);
