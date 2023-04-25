@@ -7,8 +7,8 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['./configuracion.component.css']
 })
 export class ConfiguracionComponent {
-  modal = true;
-  modal_guardado = true;
+  modal = false;
+  modal_guardado = false;
   numPersonas: any;
   limiteLitros: any;
 
