@@ -14,19 +14,13 @@ export class ConfiguracionComponent {
 
   constructor(private ls: LocalStorageService){}
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.numPersonas = this.ls.leerDatos("numPersonas");  
     this.limiteLitros = this.ls.leerDatos("limiteLitros");
-
-    if(!this.numPersonas || !this.limiteLitros){
-      let botonGuardar = document.getElementById("guardar-btn") as HTMLButtonElement;
-      botonGuardar.disabled = true;
-      botonGuardar.style.animationDuration = "0s";
-      botonGuardar.style.opacity = "50%";
-    }
+    this.validarInputs();
   }
 
-  
+
   validarInputs(){    
     let botonGuardar = document.getElementById("guardar-btn") as HTMLButtonElement;
 
