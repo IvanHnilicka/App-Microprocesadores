@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../local-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -6,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit{ 
+  constructor(private ls: LocalStorageService, private router: Router){}
+
   ngOnInit(): void {
+    if(!this.ls.leerDatos("numPersonas") || !this.ls.leerDatos("limiteLitros")){
+      this.router.navigate(["Configuracion"]);
+    }
+
+
     let porcentaje = 80;  // Se calculará en base a la lectura del sensor y el tamaño del tinaco
     let porcentajeLbl = document.getElementById('porcentaje');
     this.updateHeight(porcentaje);

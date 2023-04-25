@@ -8,10 +8,7 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['./estadisticas.component.css']
 })
 export class EstadisticasComponent {
-
-  constructor(private ls: LocalStorageService){}
-
-
+  
   title = 'Consumo diario';
 
   public barChartLegend = false;  // Indica que no muestre la etiqueta
