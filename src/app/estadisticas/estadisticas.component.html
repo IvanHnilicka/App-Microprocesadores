@@ -1,9 +1,15 @@
 <div class="grafica-container">
-    <canvas baseChart
+    <div class="header-container">        
+        <h2 class="header">Estadisticas</h2>
+    </div>
+    <div class="grafica">
+        <canvas baseChart
             [data]="barChartData"
             [options]="barChartOptions"
             [plugins]="barChartPlugins"
             [legend]="barChartLegend"
             [type]="'bar'">
-    </canvas>
+        </canvas>
+    </div>
+    
 </div>
