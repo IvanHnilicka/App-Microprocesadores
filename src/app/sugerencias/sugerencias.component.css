@@ -21,3 +21,10 @@
     left: 10px;
     font-family: 'Heebo', sans-serif;
 }
+
+@media screen and (orientation: landscape){
+    .sugerencias-container {
+        display: grid;
+        grid-template-rows: 12vh calc(88vh - 40px);
+    }
+}

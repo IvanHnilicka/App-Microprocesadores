@@ -31,6 +31,18 @@
     place-items: center;
     align-self: center;
     grid-row: 2 / 3;
+
+    animation-name: load-grafica;
+    animation-duration: 1s;
+}
+
+@keyframes load-grafica {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 canvas {
