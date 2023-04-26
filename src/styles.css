@@ -8,9 +8,9 @@
 html, body {
     height: 100%;
     width: 100%;
-    overflow-y: hidden;
 }
 
 body {
     background-image: linear-gradient(rgb(245, 255, 255), rgb(215, 255, 255), rgb(245, 255, 255));
+    position: relative;
 }

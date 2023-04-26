@@ -9,9 +9,10 @@
         <input type="number" id="numPersonas" name="numPersonas" min="1" max="10" placeholder="{{numPersonas}}" [(ngModel)]="numPersonas" (input)="validarInputs()">
         <label for="limite">Limite de litros que desea gastar:</label>
         <input type="number" id="limite" name="limite" min="1" max="1000" placeholder="{{limiteLitros}}" [(ngModel)]="limiteLitros" (input)="validarInputs()">
-    </div>
 
-    <button class="guardar-btn" id="guardar-btn" (click)="guardarConfiguracion();" (click)="modal=true">Guardar</button>      
+    </div>      
+    
+    <button class="guardar-btn" id="guardar-btn" (click)="guardarConfiguracion();" (click)="modal=true">Guardar</button>  
 
 
     <div class="modal" *ngIf="modal" (click)="modal = false;">

@@ -27,7 +27,6 @@ export class ConfiguracionComponent {
 
     if(!this.numPersonas || !this.limiteLitros){
       botonGuardar.disabled = true;
-      botonRegresar.style.display = 'none';
       botonGuardar.style.animationDuration = "0s";
       botonGuardar.style.opacity = "50%";
     }else{

@@ -4,6 +4,7 @@
 }
 
 body{ 
+    height: 100%;
     display: grid;
     grid-template-rows: 95vh 5vh;
 }
