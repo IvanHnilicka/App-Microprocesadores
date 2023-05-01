@@ -9,7 +9,7 @@ body {
     height: calc(100vh - 90px);
     width: 100%;
     display: grid;
-    grid-template-rows: 70% 7.5%;
+    grid-template-rows: 70% 10% 20%;
     place-items: center;
 }
 
@@ -67,6 +67,9 @@ button:active img {
 .tinaco {
     height: 65%;
     width: 60%;
+    min-width: 130px;
+    max-height: 300px;
+    max-width: 230px;
     border: 1px solid rgb(120, 120, 120);
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
@@ -168,13 +171,25 @@ p {
     }
 }
 
+.boton-conectar {
+    width: 28%;
+    height: 28%;
+    background: rgb(122, 205, 216);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 100%;
+    align-self: center;
+}
+
 @media screen and (orientation: landscape){    
     body {
-        grid-template-rows: 12vh calc(88vw - 40px);
+        grid-template-rows: 7vw calc(93vw - 45px);;
     }
 
     .main-container {
-        grid-template-rows: calc(70vh - 45px) calc(28vh - 45px);
+        grid-row: 2 / 3;
+        grid-template-rows: 70% 15% 15%
     }
 
     .container-btn {
@@ -194,15 +209,22 @@ p {
 
     #etiqueta {
         align-self: center;
-        position: relative;
-        top: -10%;
+        position: absolute;
+        top: 75%;
     }
 
     p {
-        font-size: 1rem;
+        font-size: 100%;
     }
 
     .porcentaje {
         font-size: 1.35rem;
+    }
+
+    .boton-conectar {
+        height: 70%;
+        width: 12%;
+        position: relative;
+        bottom: -30px;
     }
 }

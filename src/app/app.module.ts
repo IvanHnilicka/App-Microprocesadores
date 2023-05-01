@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
     BrowserModule,
     FormsModule,
     NgChartsModule,
+    WebBluetoothModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { Router } from '@angular/router';
+import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
+
 
 @Component({
   selector: 'app-inicio',
@@ -8,13 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit{ 
-  constructor(private ls: LocalStorageService, private router: Router){}
+  constructor(private ls: LocalStorageService, private router: Router, private BT: BluetoothCore){}
 
   ngOnInit(): void {
     if(!this.ls.leerDatos("numPersonas") || !this.ls.leerDatos("limiteLitros")){
       this.router.navigate(["Configuracion"]);
     }
-
 
     let porcentaje = 80;  // Se calculará en base a la lectura del sensor y el tamaño del tinaco
     let porcentajeLbl = document.getElementById('porcentaje');
@@ -63,6 +64,20 @@ export class InicioComponent implements OnInit{
     }, (1/altura) * 900);
   }
 
+
+  requestDevice(){
+    // TODO Cambiar por filtro de nombre
+    navigator.bluetooth.requestDevice( { acceptAllDevices: true } ).then(
+      device => {
+        console.log("Conectado con ", device.name);
+        return device.gatt?.connect();
+      }
+    ).catch(
+      error => {
+        console.error("Error.", error);
+    }
+    );
+  }
 
   
 }
