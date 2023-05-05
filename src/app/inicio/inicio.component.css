@@ -206,3 +206,10 @@ p {
         font-size: 1.35rem;
     }
 }
+
+.lista-bluetooth{
+    position:relative;
+    top: -100px;
+    height: 100%;
+    width: 100%;
+}

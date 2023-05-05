@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { Router } from '@angular/router';
+/**/
+import { BluetoothSerial } from '@awesome-cordova-plugins/bluetooth-serial/ngx'; 
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit{ 
-  constructor(private ls: LocalStorageService, private router: Router){}
+  constructor(private ls: LocalStorageService, private router: Router,/**/private BluetoothSerial:BluetoothSerial, private alertController : AlertController){}
 
   ngOnInit(): void {
     if(!this.ls.leerDatos("numPersonas") || !this.ls.leerDatos("limiteLitros")){
@@ -64,5 +67,69 @@ export class InicioComponent implements OnInit{
   }
 
 
+  /**/
+  ActivarBluetooth(){
+    this.BluetoothSerial.isEnabled().then(response=>{
+      this.MensajeAlerta("Está conectado");
+      console.log("Esta conectado");
+      this.Listdevices()
+    }, error => {
+      this.MensajeAlerta("No está conectado");
+      console.log("No está conectado");
+    })
+  }
+
+  async MensajeAlerta(msg : any){
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      message: msg,
+      buttons: [{
+        text: 'Okay',
+        handler: () => {
+          console.log("Okay")
+        }
+      }]
+    })
+  }
+  
+  Devices: any
+  Listdevices(){
+    this.BluetoothSerial.list().then(response => {
+    this.Devices=response
+    }, error=>{
+      console.log(("Error en Listdevices"))
+    })
+  }
+
+  connect(address : any){
+    this.BluetoothSerial.connect(address).subscribe(success=>{
+      this.deviceConnected()
+    },error=>{
+      console.log("Error en connect")
+    })
+  }
+
+  deviceConnected(){
+    this.BluetoothSerial.subscribe('/n').subscribe(success=>{
+      this.hundler(success)
+    })
+  }
+  
+  hundler(value : any){
+    console.log(value)
+  }
+
+  setData(){
+    this.BluetoothSerial.write("7").then(response=>{
+      console.log("Oky")
+    }, error=>{
+      console.log("Error en setData")
+    })
+  }
+
+  Disconnected(){
+    this.BluetoothSerial.disconnect()
+    console.log("dispositivo desconectado")
+  }
   
 }

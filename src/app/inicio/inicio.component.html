@@ -20,5 +20,19 @@
         </div>       
         
         <p id="etiqueta">Litros de agua disponibles: 800</p>
+
+        <!---->
+        <button (click) = "ActivarBluetooth()">Buscar</button>  
     </div>
+
+    <!---->
+    <div class="lista-bluetooth"  id="lista bluetooth">        
+        <div *ngFor = "let data of Devices"> 
+            <p>{{data.name}}</p>
+            <p>{{data.id}}</p>
+
+            <button (click) = "connect(data.address)">Conectar</button>
+        </div>
+    </div>
+    
 </body>

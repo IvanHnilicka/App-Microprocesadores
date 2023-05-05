@@ -10,6 +10,10 @@ import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { SugerenciasComponent } from './sugerencias/sugerencias.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { IonicModule } from '@ionic/angular';
+
+/* */
+import {BluetoothSerial} from '@awesome-cordova-plugins/bluetooth-serial/ngx';
 
 @NgModule({
   declarations: [
@@ -25,8 +29,12 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
     BrowserModule,
     FormsModule,
     NgChartsModule,
+    IonicModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    /* */
+    BluetoothSerial
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
