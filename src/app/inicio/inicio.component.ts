@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { Router } from '@angular/router';
-import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit{ 
-  constructor(private ls: LocalStorageService, private router: Router, private BT: BluetoothCore){}
+  constructor(private ls: LocalStorageService, private router: Router){}
 
   ngOnInit(): void {
     if(!this.ls.leerDatos("numPersonas") || !this.ls.leerDatos("limiteLitros")){
@@ -62,22 +61,5 @@ export class InicioComponent implements OnInit{
         clearInterval(interval);
       }
     }, (1/altura) * 900);
-  }
-
-
-  requestDevice(){
-    // TODO Cambiar por filtro de nombre
-    navigator.bluetooth.requestDevice( { acceptAllDevices: true } ).then(
-      device => {
-        console.log("Conectado con ", device.name);
-        return device.gatt?.connect();
-      }
-    ).catch(
-      error => {
-        console.error("Error.", error);
-    }
-    );
-  }
-
-  
+  }  
 }

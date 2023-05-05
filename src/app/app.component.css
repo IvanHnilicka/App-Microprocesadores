@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-body{ 
-    height: 100%;
+body{
     display: grid;
     grid-template-rows: 95vh 5vh;
 }
