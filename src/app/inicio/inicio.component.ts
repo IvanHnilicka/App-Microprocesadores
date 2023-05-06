@@ -75,14 +75,15 @@ export class InicioComponent implements OnInit{
   error = "";
 
   activarBluetooth(){
+    this.error = "";
+    this.mostrarError = false;
     this.mostrarLista = true;
 
     this.BluetoothSerial.isEnabled().then(response=>{
       console.log("Conectado");
       this.mostrarError = false;
       this.listDevices();
-    }, error => {
-      
+    }, error => {      
       this.BluetoothSerial.enable().then(() => {
         this.BluetoothSerial.showBluetoothSettings();
       }).catch(error => {
