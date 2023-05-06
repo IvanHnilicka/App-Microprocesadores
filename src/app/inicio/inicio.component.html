@@ -20,18 +20,24 @@
         </div>       
         
         <p id="etiqueta">Litros de agua disponibles: 800</p>
-
-        <!---->
-        <button (click) = "ActivarBluetooth()">Buscar</button>  
+        <button (click)="activarBluetooth()" class="buscar-btn">Buscar</button>  
     </div>
 
-    <!---->
-    <div class="lista-bluetooth"  id="lista bluetooth">        
-        <div *ngFor = "let data of Devices"> 
-            <p>{{data.name}}</p>
-            <p>{{data.id}}</p>
+    <div class="modal" *ngIf="mostrarLista">
+        <div class="lista-modal">
+            <div class="lista-dispositivos" >
+                <div *ngIf="mostrarError" class="device" id="error-msg" style="color: rgb(200, 0, 0)">Error. {{error}}</div>
+                <div *ngFor="let device of Devices" class="device"> 
+                    <p>{{device.name}}</p> 
+                    <button (click)="connect(device.address)" class="conectar-btn"><img src="../../assets/radio-outline.svg" alt="Conectar"></button>
+                </div>
 
-            <button (click) = "connect(data.address)">Conectar</button>
+                <div *ngIf="!mostrarError" class="device loader-container">
+                    <p>Buscando dispositivos...</p>
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <button class="cancelar-btn" (click)="mostrarLista = false">Cancelar</button>
         </div>
     </div>
     

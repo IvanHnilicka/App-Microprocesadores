@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { Router } from '@angular/router';
 /**/
-import { BluetoothSerial } from '@awesome-cordova-plugins/bluetooth-serial/ngx'; 
-import { AlertController } from '@ionic/angular';
+import { BluetoothSerial } from '@awesome-cordova-plugins/bluetooth-serial/ngx';
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit{ 
-  constructor(private ls: LocalStorageService, private router: Router,/**/private BluetoothSerial:BluetoothSerial, private alertController : AlertController){}
+  constructor(private ls: LocalStorageService, private router: Router, private BluetoothSerial:BluetoothSerial){}
 
   ngOnInit(): void {
     if(!this.ls.leerDatos("numPersonas") || !this.ls.leerDatos("limiteLitros")){
@@ -67,37 +66,37 @@ export class InicioComponent implements OnInit{
   }
 
 
-  /**/
-  ActivarBluetooth(){
+  /*
+    Funciones bluetooth
+  */  
+  Devices: any[] = [];
+  mostrarLista = false;
+  mostrarError = false;
+  error = "";
+
+  activarBluetooth(){
+    this.mostrarLista = true;
+
     this.BluetoothSerial.isEnabled().then(response=>{
-      this.MensajeAlerta("Está conectado");
-      console.log("Esta conectado");
-      this.Listdevices()
+      console.log("Conectado");
+      this.mostrarError = false;
+      this.listDevices();
     }, error => {
-      this.MensajeAlerta("No está conectado");
-      console.log("No está conectado");
+      
+      this.BluetoothSerial.enable().then(() => {
+        this.BluetoothSerial.showBluetoothSettings();
+      }).catch(error => {
+        this.error = error;
+        this.mostrarError = true;
+      });
     })
   }
 
-  async MensajeAlerta(msg : any){
-    const alert = await this.alertController.create({
-      header: 'Alerta',
-      message: msg,
-      buttons: [{
-        text: 'Okay',
-        handler: () => {
-          console.log("Okay")
-        }
-      }]
-    })
-  }
-  
-  Devices: any
-  Listdevices(){
+  listDevices(){
     this.BluetoothSerial.list().then(response => {
-    this.Devices=response
+    this.Devices = response;
     }, error=>{
-      console.log(("Error en Listdevices"))
+      console.error("listDevices", error);
     })
   }
 
@@ -105,31 +104,27 @@ export class InicioComponent implements OnInit{
     this.BluetoothSerial.connect(address).subscribe(success=>{
       this.deviceConnected()
     },error=>{
-      console.log("Error en connect")
+      console.error("Connect", error)
     })
   }
 
   deviceConnected(){
     this.BluetoothSerial.subscribe('/n').subscribe(success=>{
-      this.hundler(success)
+      console.log(success);
     })
-  }
-  
-  hundler(value : any){
-    console.log(value)
   }
 
   setData(){
     this.BluetoothSerial.write("7").then(response=>{
-      console.log("Oky")
+      console.log("setData", response);
     }, error=>{
-      console.log("Error en setData")
+      console.error("setData", error);
     })
   }
 
-  Disconnected(){
-    this.BluetoothSerial.disconnect()
-    console.log("dispositivo desconectado")
+  disconnected(){
+    this.BluetoothSerial.disconnect();
+    console.log("dispositivo desconectado");
   }
   
 }

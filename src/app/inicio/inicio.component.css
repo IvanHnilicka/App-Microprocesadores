@@ -3,25 +3,26 @@ body {
     width: 100vw;
     display: grid;
     grid-template-rows: 7vh calc(93vh - 40px);
-}
-
-.main-container {
-    height: calc(100vh - 90px);
-    width: 100%;
-    display: grid;
-    grid-template-rows: 70% 7.5%;
-    place-items: center;
+    position: relative;
 }
 
 .container-btn {
     width: 100%;
     height: 100%;
-    min-height: 36px;
     display: grid;
     grid-template-columns: 85% 15%;
     align-items: center;
     background-color: rgb(122, 205, 216);
 }
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 70% 10% 10%;
+    place-items: center;
+}
+
 
 .header {
     color: white;
@@ -51,6 +52,11 @@ body {
 }
 
 button:active img {
+    animation: shrink-btn;
+    animation-duration: 0.2s;
+}
+
+button:active {
     animation: shrink-btn;
     animation-duration: 0.2s;
 }
@@ -168,17 +174,138 @@ p {
     }
 }
 
+.buscar-btn {
+    height: 55%;
+    width: 24%;
+    background-color: rgb(122, 205, 216);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-modal {
+    height: 50vh;
+    width: 80vw;
+    background-color: white;
+    padding: 15px;
+    padding-bottom: 0;
+    border-radius: 20px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 85% 15%;
+    animation-name: show-lista;
+    animation-duration: 0.75s;
+}
+
+@keyframes show-lista {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.lista-dispositivos {
+    overflow: scroll;
+}
+
+.device {
+    height: 12%;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+    padding: 0 10px;
+    grid-row: 1 / 2;
+}
+
+.device p {
+    font-size: 1.1rem;
+}
+
+.conectar-btn {
+    width: 100%;
+    height: 100%;
+}
+
+.conectar-btn img {
+    height: 60%;
+    width: 60%;
+}
+
+.cancelar-btn {
+    height: 55%;
+    width: 30%;
+    background-color: rgb(122, 205, 216);
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-container {
+    background-color: white;
+    height: 10%;
+}
+
+.loader-container p {
+    color: rgb(200, 200, 200);
+    font-size: 1rem;
+}
+
+.loader {
+    border-top: 2px solid rgb(122, 205, 216);
+    border-radius: 50%;
+    height: 5vw;
+    width: 5vw;
+    align-self: center;
+    justify-self: center;
+    animation-name: loader;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(-360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
 @media screen and (orientation: landscape){    
     body {
-        grid-template-rows: 12vh calc(88vw - 40px);
+        grid-template-rows: 12vh calc(88vh - 40px);
     }
 
     .main-container {
-        grid-template-rows: calc(70vh - 45px) calc(28vh - 45px);
+        height: 100%;
+        grid-template-rows: 70% 15% 15%;
     }
 
     .container-btn {
         grid-template-columns: 90% 10%;
+        grid-template-rows: 100%;
     }
 
     .btn-config{
@@ -205,11 +332,43 @@ p {
     .porcentaje {
         font-size: 1.35rem;
     }
-}
 
-.lista-bluetooth{
-    position:relative;
-    top: -100px;
-    height: 100%;
-    width: 100%;
+    .buscar-btn {
+        height: 64%;
+        width: 12%;
+        font-size: 1rem;
+    }
+
+    .lista-modal {
+        height: 60vh;
+        grid-template-rows: 80% 20%;
+    }
+
+    .device {
+        height: 25%;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .conectar-btn {
+        height: 60%;
+        width: 60%;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .conectar-btn img {
+        height: 80%;
+        width: 80%;
+    }
+
+    .loader {
+        height: 5vh;
+        width: 5vh;
+    }
+
+    .cancelar-btn {
+        height: 80%;
+        width: 15%;
+    }
 }
