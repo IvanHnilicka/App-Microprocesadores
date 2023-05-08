@@ -1,5 +1,17 @@
-<div class="sugerencias-container">
+<div class="sugerencias-container" >
     <div class="header-container">        
         <h2 class="header">Sugerencias</h2>
     </div>
+    <div class="main-container">
+        <div class ="cuadro">
+            <p class = "texto">{{ mensaje }}</p>
+            <button class="gradient-button" (click)="retroceder()">Anterior</button>
+
+            <button class="bottom-right-button" (click)="avanzar()">Siguiente</button>
+
+
+        </div>
+        
+    </div>
+
 </div>
